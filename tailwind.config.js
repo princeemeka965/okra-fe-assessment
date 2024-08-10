@@ -2,7 +2,14 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        surfaceSecondary: '#F2F2F3',
+        surfaceSubdued: '#909092',
+        surfaceWhite: '#FEFEFF',
+        borderPrimary: '#824FE7'
+      }
+    },
   },
   plugins: [],
 }

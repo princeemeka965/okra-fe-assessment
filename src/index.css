@@ -10,3 +10,18 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.peer:hover::placeholder {
+  color: #5e5e60;
+}
+
+.input:focus-within {
+  box-shadow: 0px 0px 0px 4px rgba(137, 87, 239, 0.2) !important;
+}
+
+/* Custom CSS to hide placeholder text on focus */
+@layer utilities {
+  .focus-within\:flex:focus-within {
+    display: flex;
+  }
+}
