@@ -2,6 +2,7 @@ import { useState } from "react";
 
 function Input(props) {
     const [isFocused, setIsFocused] = useState(false);
+    const [hasError] = useState(props.error);
     const [inputValue, setInputValue] = useState(props.value);
 
     const handleFocus = () => {
@@ -21,7 +22,7 @@ function Input(props) {
     return (
         <>
             <div className="w-full flex flex-col gap-2">
-                <div className="w-full rounded-md flex flex-col h-[58px] gap-1 py-[10px] px-4 bg-surfaceSecondary input focus-within:bg-surfaceWhite focus-within:border-[2px] focus-within:border-borderPrimary"
+                <div className={`w-full rounded-md flex flex-col h-[58px] gap-1 py-[10px] px-4 bg-surfaceSecondary focus-within:bg-surfaceWhite focus-within:border-[2px] ${hasError ? 'error focus-within:border-borderError' : 'input focus-within:border-borderPrimary'}`}
                 >
                     <span className="text-[10px] text-surfaceSubdued">{isFocused ? props.label : ''}</span>
                     <input type={props.type} placeholder={isFocused ? props.placeholder : props.label} value={inputValue} className={`w-full
