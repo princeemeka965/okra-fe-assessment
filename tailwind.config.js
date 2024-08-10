@@ -8,7 +8,9 @@ module.exports = {
         surfaceSubdued: '#909092',
         surfaceWhite: '#FEFEFF',
         borderPrimary: '#824FE7',
-        borderError: '#FF401E'
+        borderError: '#FF401E',
+        primaryCTA: '#FEFEFF',
+        romanSilver: '#E6E6E7',
       }
     },
   },
