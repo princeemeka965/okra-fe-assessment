@@ -30,6 +30,7 @@ function Input(props) {
                         onFocus={handleFocus}
                         onBlur={handleBlur}
                         onChange={handleChange}
+                        autoComplete="nope"
                     />
                 </div>
             </div>
