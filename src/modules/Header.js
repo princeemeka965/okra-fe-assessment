@@ -45,7 +45,7 @@ function Header() {
         }
     ]
     return <>
-        <div className={`w-full fixed ${scrollPosition > 0 ? 'border-b-2' : ''}`}>
+        <div className={`w-full top-0 z-50 fixed ${scrollPosition > 0 ? 'border-b-2' : ''}`}>
             <div className="w-full bg-surfaceWhite flex justify-between items-center py-[12px] px-[64px]">
                 <div className="flex gap-3">
                     <BrinteLogo />
