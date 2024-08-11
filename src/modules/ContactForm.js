@@ -1,9 +1,27 @@
+import { useState } from "react";
 import Button from "../components/Button";
 import CustomSelectInput from "../components/CustomSelectInput";
 import Input from "../components/Input";
 import Textarea from "../components/TextField";
 
 function ContactForm() {
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        companyName: '',
+        websiteUrl: '',
+        howDidYouFindUs: '',
+        message: '',
+    });
+
+    const handleChange = (event) => {
+        setFormData({
+            ...formData,
+            [event.target.name]: event.target.value,
+        });
+    };
+
     return <>
         <div className="flex w-full py-[128px] px-[395px] my-[69px] gap-5">
             <div className="w-full flex flex-col gap-5">
@@ -12,27 +30,28 @@ function ContactForm() {
             </div>
             <div className="w-full flex flex-col gap-5">
                 <div className="w-full flex gap-4">
-                    <Input label="First name" placeholder="First name" />
-                    <Input label="Last name" placeholder="Last name" />
+                    <Input label="First name" placeholder="First name" name="firstName" onChange={handleChange} />
+                    <Input label="Last name" placeholder="Last name" name="lastName" onChange={handleChange} />
                 </div>
                 <div className="w-full flex gap-4">
-                    <Input label="Email" placeholder="Email" type="email" />
+                    <Input label="Email" placeholder="Email" type="email" name="email" onChange={handleChange} />
                 </div>
                 <div className="w-full flex gap-4">
-                    <Input label="Company Name" placeholder="Company Name" />
+                    <Input label="Company Name" placeholder="Company Name" name="companyName" onChange={handleChange} />
                 </div>
                 <div className="w-full flex gap-4">
-                    <Input label="Website URL" placeholder="Website URL" type="url" />
+                    <Input label="Website URL" placeholder="Website URL" type="url" name="websiteUrl" onChange={handleChange} />
                 </div>
                 <div className="w-full flex gap-4">
                     <CustomSelectInput
                         placeholder="How did you find us?"
                         options={['Search engine', 'Recommended by friends or colleague', 'Social media', 'Blog or publication', 'Others']}
-                        onChange={(value) => console.log('Selected:', value)}
+                        name="howDidYouFindUs"
+                        onChange={handleChange}
                     />
                 </div>
                 <div className="w-full flex gap-4">
-                    <Textarea placeholder="Message" />
+                    <Textarea placeholder="Message" name="message" onChange={handleChange} />
                 </div>
                 <div className="w-full flex gap-4">
                     <Button class="bg-borderPrimary py-2 px-3 rounded-lg button" textClass="font-[500] text-primaryCTA" value="Contact sales" />

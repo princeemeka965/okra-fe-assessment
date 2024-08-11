@@ -17,6 +17,7 @@ function Input(props) {
 
     const handleChange = (event) => {
         setInputValue(event.target.value)
+        props.onChange(event.target.value)
     }
 
     return (
