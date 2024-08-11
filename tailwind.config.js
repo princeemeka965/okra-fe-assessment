@@ -18,6 +18,7 @@ module.exports = {
         greyFade: 'rgba(254, 254, 255, 1)',
         greyDark: 'rgba(230, 230, 231, 1)',
         darkPrimary: '#202022',
+        darkSecondary: '#5E5E60',
         semanticsInfo: '#EAF3FF',
         textInfo: '#1A6AED',
         textLabel: '#464649'
