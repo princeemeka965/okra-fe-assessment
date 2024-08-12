@@ -1,7 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 
-function Input(props) {
-    const inputRef = useRef(null);
+const Input = React.forwardRef((props, ref) => {
     const [isFocused, setIsFocused] = useState(false);
     const [inputValue, setInputValue] = useState(props.value);
 
@@ -20,19 +19,6 @@ function Input(props) {
         props.onChange(event.target.value)
     }
 
-    useEffect(() => {
-        // This effect runs whenever the `props.error` value changes.
-        // If `props.error` is true (i.e., there's an error),
-        // focus the input field using `inputRef.current.focus()`
-        // and also set the `isFocused` state to true, which is used to
-        // apply additional styles when the input is focused.
-        if (props.error) {
-            inputRef.current.focus();
-            setIsFocused(true);
-        }
-    }, [props.error]);
-
-
     return (
         <>
             <div className="w-full flex flex-col gap-2">
@@ -45,7 +31,7 @@ function Input(props) {
                         onBlur={handleBlur}
                         onChange={handleChange}
                         autoComplete="off"
-                        ref={inputRef}
+                        ref={ref}
                         name={props.name}
                     />
                 </div>
@@ -53,6 +39,6 @@ function Input(props) {
             </div>
         </>
     )
-};
+});
 
 export default Input
