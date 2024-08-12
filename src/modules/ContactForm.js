@@ -1,11 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Button from "../components/Button";
 import CustomSelectInput from "../components/CustomSelectInput";
 import Input from "../components/Input";
 import Textarea from "../components/TextField";
 import useFormValidation from "../hooks/useFormValidation";
+import { Context } from "../context";
 
 function ContactForm() {
+    const { setSubmittedState } = useContext(Context);
     const inputRefs = useRef([]);
 
     const [formData, setFormData] = useState({
@@ -25,10 +27,10 @@ function ContactForm() {
     const handleSubmit = () => {
         setLoading(true);
         if (validate(formData)) {
+            // Submit the form and change state to display the Success message
             setTimeout(() => {
-                // Submit form data
-                console.log('Form submitted:', formData);
-            }, 2000)
+                setSubmittedState(true)
+            }, 3000)
         }
         else {
             setLoading(false);
@@ -58,7 +60,7 @@ function ContactForm() {
                 }
             }
         }
-    }, [errors, formData]);
+    }, [errors]);
 
 
     return <>
