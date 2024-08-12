@@ -11,6 +11,9 @@ const useFormValidation = () => {
         if (!formData.lastName) newErrors.lastName = 'Last name is required';
         if (!formData.email)
             newErrors.email = 'Email is required';
+        if (!formData.lastName) newErrors.companyName = 'Company name is required';
+        if (!formData.howDidYouFindUs) newErrors.howDidYouFindUs = 'How did you find us? is required';
+        if (!formData.websiteUrl) newErrors.websiteUrl = 'Website Url is required';
         if (!formData.message) newErrors.message = 'Message is required';
 
 
@@ -21,9 +24,7 @@ const useFormValidation = () => {
         return Object.keys(newErrors).length === 0;
     };
 
-    const isValid = Object.keys(errors).length === 0;
-
-    return { errors, validate, isValid };
+    return { errors, validate };
 };
 
 function isValidEmail(email) {
