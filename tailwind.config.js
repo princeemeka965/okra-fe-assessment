@@ -21,7 +21,10 @@ module.exports = {
         darkSecondary: '#5E5E60',
         semanticsInfo: '#EAF3FF',
         textInfo: '#1A6AED',
-        textLabel: '#464649'
+        textLabel: '#464649',
+        surfaceOverlay: 'rgba(70, 70, 73, 0.16)',
+        surfaceSuccess: '#2AAF2A',
+        shadowSuccess: 'rgba(42, 175, 42, 0.4)'
       }
     },
   },
