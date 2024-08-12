@@ -11,7 +11,7 @@ const useFormValidation = () => {
         if (!formData.lastName) newErrors.lastName = 'Last name is required';
         if (!formData.email)
             newErrors.email = 'Email is required';
-        if (!formData.lastName) newErrors.companyName = 'Company name is required';
+        if (!formData.companyName) newErrors.companyName = 'Company name is required';
         if (!formData.howDidYouFindUs) newErrors.howDidYouFindUs = 'How did you find us? is required';
         if (!formData.websiteUrl) newErrors.websiteUrl = 'Website Url is required';
         if (!formData.message) newErrors.message = 'Message is required';
