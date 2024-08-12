@@ -4,16 +4,15 @@ import Footer from './modules/Footer';
 import Header from './modules/Header';
 import ResourcesBlock from './modules/ResourcesBlock';
 import { Context } from './context';
+import SuccessForm from './modules/SuccessForm';
 
 function App() {
-  const { isSubmitted } = useContext(Context);
-
-  console.log(isSubmitted);
+  const { isSubmitted } = useContext(Context); // This checks if our contact form was submitted successfully
 
   return (
     <>
       <Header />
-      <ContactForm />
+      {isSubmitted ? <SuccessForm /> : <ContactForm />}
       <ResourcesBlock />
       <Footer />
     </>
