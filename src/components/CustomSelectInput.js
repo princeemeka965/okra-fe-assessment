@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 const CustomSelectInput = React.forwardRef((props, ref) => {
     const [selectedOption, setSelectedOption] = useState(props.placeholder || '');
